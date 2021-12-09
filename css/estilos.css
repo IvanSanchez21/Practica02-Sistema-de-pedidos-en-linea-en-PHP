@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color:#EFE3E3;
+    /* background-color:#EFE3E3; */
 }
 
 h1,
@@ -20,9 +20,7 @@ h6 {
     font-weight: 300;
 }
 
-.about-us{
-    background-color: #EFE3E3;
-}
+
 .contenedor {
     width: 90%;
     max-width: 90%;
@@ -54,13 +52,16 @@ header::before {
     margin-bottom: 80px;
 }
 
-
+.enlaces-header a{
+    color:#070304;
+   
+}
 nav {
     width: 100%;
     height: 80px;
-    background: #fff;
+    background: #FFFFFF;
     border-bottom: 1px solid transparent;
-    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2); 
     position: fixed;
     top: 0;
     z-index: 100;
@@ -87,14 +88,18 @@ nav {
 }
 
 .enlaces-header {
-    font-weight: 300;
+    font-weight: 600;
     transition: ease-in-out 0.5s;
+    display: inline-block;
+}
+
+.enlaces-header a:hover{
+    border-bottom: 3px solid #070304;
+		padding-bottom: 5px;
 }
 
 .nav .enlaces-header a {
-    color: #5D6678;
-    text-decoration: none;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .hamburguer {
@@ -172,7 +177,7 @@ nav {
     text-align: center;
     padding-top: 20px;
     border-radius: 50%;
-    box-shadow: 0 8px 32px rgba(255, 255, 255);
+    /* box-shadow: 0 8px 32px rgba(255, 255, 255); */
 }
 
 .articulo>h3 {
@@ -200,7 +205,7 @@ nav {
 /* Results */
 
 .results {
-    background: #84AEC8;
+    background: #3E3F44;
     padding-top: 30px;
 }
 
@@ -218,15 +223,15 @@ nav {
 
 .numbers .number {
     width: 45%;
-    background: rgba(255, 255, 255, .2);
-    color: #fff;
+    background:#EFE3E3;
+    /* color: red; */
     border-radius: 10px;
     padding: 40px 35px;
     margin-bottom: 20px;
 }
 
 .numbers .number h4 {
-    color: #fff;
+    color:#ABA4A6;
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -267,7 +272,7 @@ nav {
 /* footer */
 
 footer {
-    background: #393941;
+    background: #FFFFFF;
     padding: 60px 0;
     overflow: hidden;
     display: flex;
@@ -282,7 +287,7 @@ footer {
 }
 
 .partFooter h4 {
-    color: #EFE3E3;
+    color: #070304;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 30px;
@@ -291,7 +296,7 @@ footer {
 .partFooter a {
     display: block;
     text-decoration: none;
-    color: #EFE3E3;
+    color: #3E3F44;
     font-weight: 300;
     transition: color .3s ease-in-out;
     margin-bottom: 10px;
