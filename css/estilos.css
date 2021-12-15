@@ -53,7 +53,7 @@ header::before {
 }
 
 .enlaces-header a{
-    color:#070304;
+    color:#3F4046;
    
 }
 nav {
@@ -88,13 +88,13 @@ nav {
 }
 
 .enlaces-header {
-    font-weight: 600;
+    font-weight: 550;
     transition: ease-in-out 0.5s;
     display: inline-block;
 }
 
 .enlaces-header a:hover{
-    border-bottom: 3px solid #070304;
+    border-bottom: 3px solid #3F4046;
 		padding-bottom: 5px;
 }
 
@@ -272,7 +272,7 @@ nav {
 /* footer */
 
 footer {
-    background: #FFFFFF;
+    background: #3F4046;
     padding: 60px 0;
     overflow: hidden;
     display: flex;
@@ -304,7 +304,7 @@ footer {
 
 
 .partFooter a:hover {
-    color: #FFFFFF;
+    color: #3F4046;
 }
 
 .partFooter img {
