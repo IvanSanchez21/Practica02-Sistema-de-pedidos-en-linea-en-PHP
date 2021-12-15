@@ -5,18 +5,16 @@
 <title>CRUD</title>
 <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
 <!-- <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" /> -->
-<link rel="stylesheet" type="text/css" href="hoja.css">
+<link rel="stylesheet" type="text/css" href="../../css/hoja.css">
 
 
 </head>
 
 <body>
 
-
-
 <?php
-include 'conexionBD.php';
-$sql = "SELECT * FROM cliente";
+include '../../config/conexionBD.php';
+$sql = "SELECT * FROM clientes";
 $result = $conn->query($sql);
 ?>
 
@@ -32,6 +30,7 @@ $result = $conn->query($sql);
       <td class="primera_fila">Dirección</td>
       <td class="primera_fila">Teléfono;</td>
       <td class="primera_fila">Correo</td>
+      <td class="primera_fila">Contraseña</td>
     </tr> 
    
    <?php 
@@ -39,31 +38,33 @@ $result = $conn->query($sql);
         echo "<tr>";
         echo " <td>" . $row["cli_codigo"] . "</td>";
         echo " <td>" . $row["cli_cedula"] . "</td>";
-        echo " <td>" . $row["cli_nombres"] . "</td>";
-        echo " <td>" . $row["cli_apellidos"] . "</td>";
+        echo " <td>" . $row["cli_nombre"] . "</td>";
+        echo " <td>" . $row["cli_apellido"] . "</td>";
         echo " <td>" . $row["cli_direccion"] . "</td>";
-        echo " <td>" . $row["cli_telefono"] . "</td>";
-        echo " <td>" . $row["cli_correo"] . "</td>";
-      // echo "<tr>";
+        echo " <td>" . $row["pro_telefono"] . "</td>";
+        echo " <td>" . $row["cab_correo"] . "</td>";
+        echo " <td>" . $row["cab_clave"] . "</td>";
+    //   
     ?>
-      <td class="bot"><a href="eliminar.php?codigo=3"><input type='button' name='del' id='del' value='Borrar'></a></td>
+      <td class="bot"><a href="eliminar.php?codigo=<?php echo $row["cli_codigo"]?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
       
-      <td class='bot'><input type='button' name='up' id='up' value='Actualizar'></a></td>
-    </tr> 
+      <td class='bot'><a href="editar.php?
+      codigo=<?php echo $row["cli_codigo"]?> &
+      cedula=<?php echo $row["cli_cedula"]?> &
+      nombre=<?php echo $row["cli_nombre"]?> &
+      apellido=<?php echo $row["cli_apellido"]?> &
+      direccion=<?php echo $row["cli_direccion"]?> &
+      telefono=<?php echo $row["pro_telefono"]?> &
+      correo=<?php echo $row["cab_correo"]?> &
+      correo=<?php echo $row["cab_clave"]?>">
+      <input type='button' name='up' id='up' value='Actualizar'></a></td>
+      
+      <td class="bot"><a href="../vista/crear_cliente.html"><input type='button' name='del' id='del' value='Crear'></a></td>
+      </tr>
 
 <?php 
 endwhile;
 ?>	
-	<tr>
-	<td></td>
-      <td><input type='text' name='Nom' size='10' class='centrado'></td>
-      <td><input type='text' name='Nom' size='10' class='centrado'></td>
-      <td><input type='text' name='Nom' size='10' class='centrado'></td>
-      <td><input type='text' name='Nom' size='10' class='centrado'></td>
-      <td><input type='text' name='Ape' size='10' class='centrado'></td>
-      <td><input type='text' name=' Dir' size='10' class='centrado'></td>
-      <td class='bot'><input type='submit' name='cr' id='cr' value='Insertar'></td>
-	</tr>    
   </table>
 
 
