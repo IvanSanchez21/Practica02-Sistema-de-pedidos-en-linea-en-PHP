@@ -1,19 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
-section{
-	width: 60%;
-	/* background-color: red; */
-}
 
 h1{text-align:center;
 }
 
-.subtitulo{
-	font-size:12px;
+table{
+	width: 90%;
+	margin: auto;
 }
-
 body{
-	background-color:#FFC;
+	background-color:#fff;
 }
 
 table td{
@@ -34,7 +30,6 @@ table .bot{
 
 table .primera_fila{
 	font-size:1.5em;
-	text-decoration:underline;
 	background-color:#FC3;
 }
 

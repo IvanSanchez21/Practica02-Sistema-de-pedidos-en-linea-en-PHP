@@ -36,7 +36,7 @@ if ($conn->query($sql) === TRUE) {
 }
 //cerrar la base de datos 
 $conn->close();
-echo "<a href='../controlador/listar_cliente.php'>Regresar</a>";
+header("Location:listar_cliente.php");
 ?> 
 </body> 
 </html>
