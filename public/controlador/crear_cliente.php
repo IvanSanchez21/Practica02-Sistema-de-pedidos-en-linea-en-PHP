@@ -24,8 +24,7 @@ $correo = isset($_POST["correo"]) ? trim($_POST["correo"]): null;
 $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null;
 
 $sql = "INSERT INTO cliente VALUES (0, '$cedula', '$nombre', '$apellido', '$direccion', '$telefono',
-'$correo','$contrasena',1)";
-
+'$correo','$contrasena')";
 
 if ($conn->query($sql) === TRUE) {
     echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
