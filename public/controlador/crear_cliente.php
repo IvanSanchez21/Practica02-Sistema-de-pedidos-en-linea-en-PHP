@@ -9,6 +9,7 @@
     } 
 </style>
 </head> 
+ <h1>llege al controlador </h1>
 <body>
 <?php 
 
@@ -36,7 +37,7 @@ if ($conn->query($sql) === TRUE) {
 }
 //cerrar la base de datos 
 $conn->close();
-header("Location:listar_cliente.php");
+header("Location:index.html");
 ?> 
 </body> 
 </html>

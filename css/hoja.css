@@ -1,25 +1,53 @@
-@charset "utf-8";
-/* CSS Document */
-
-h1{text-align:center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
 }
+h1
+ {
+    color: #1d273b;
+    font-weight: 500;
+}
+
+
+ul{
+    list-style-type: none;
+    background-color: #457b9d;
+    overflow: hidden;
+    margin: 0;
+    padding: 0,60px,50px,0;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 23px;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: #1d3557;
+}
+
+
+.contenedor {
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+	padding: 25px;
+}
+
 
 table{
-	width: 90%;
-	margin: auto;
-}
-body{
-	background-color:#fff;
-}
-
-table td{
-	text-align:center;
-	border:1px #000099 dotted;
-
+	width: 100%;
 }
 
 table .sin{
-	border:0;
+	border:6px;
 }
 
 table .bot{

@@ -12,6 +12,7 @@
 
 <?php
 
+if(!isset($_POST["bot_actualizar"])
 // include ("conexionBD.php");
 $codigo=$_GET["codigo"];
 $cedula=$_GET["cedula"];
@@ -24,6 +25,7 @@ $correo=$_GET["correo"];
 // $sql="UPDATE FROM cliente WHERE cli_codigo=$codigo";
 // $result = $conn->query($sql);
 // header("Location:index.php");
+
 ?>
 
 
@@ -31,7 +33,7 @@ $correo=$_GET["correo"];
  
 </p>
 <p>&nbsp;</p>
-<form name="form1" method="post" action="">
+<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
   <table width="25%" border="0" align="center">
     
     <tr>
