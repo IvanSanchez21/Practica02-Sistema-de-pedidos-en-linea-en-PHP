@@ -62,22 +62,22 @@
 
     //Agregar a la tabla temporal
     if(array_key_exists('agregarPedido', $_POST) && $_POST['agregarPedido']){
-      //echo $_POST['agregarPedido'];
+      echo $_POST['agregarPedido'];
       $consultaProducto = $_POST['agregarPedido'];
       $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
         }
-      $sqlcons = "SELECT tem_codigo, tem_nombre, tem_precio, tem_descripcion FROM producto where pro_codigo=$consultaProducto";
+      $sqlcons = "SELECT tem_codigo, tem_nombre, tem_precio, tem_descripcion FROM temporal where pro_codigo=$consultaProducto";
       echo $sqlcons;
       $result = $conn->query($sqlcons);
 
         if ($result) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          //echo "<br>";
-          //echo  $row["codigo"]. $row["nombre"]. " " . $row["descripcion"]. $row["precio"]."<br>";
+          echo "<br>";
+          echo  $row["tem_codigo"]. $row["tem_nombre"]. " " . $row["tem_descripcion"]. $row["tem_precio"]."<br>";
           $nombre=$row["tem_nombre"];
           $descripcion=$row["tem_descripcion"];
           $precio=$row["tem_precio"];
@@ -86,12 +86,12 @@
           $sql = "INSERT INTO temporal (tem_nombre, tem_descripcion, tem_precio, tem_producto, usu_codigo)
             VALUES ( '$nombre', '$descripcion', $precio, $codigo, $usuario_id)";
 
-            //echo $sql;
+            echo $sql;
 
             if ($conn->query($sql) === TRUE) {
-                //echo "New record created successfully";
+                echo "New record created successfully";
             } else {
-                //echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $conn->error;
             }
           }
         }
@@ -146,7 +146,7 @@
     // output data of each row
     while($row = $pedidoQuery->fetch_assoc()) {
       //echo  $row["codigo"]. $row["nombre"]. " " . $row["descripcion"]. $row["precio"]."<br>";
-      $pedidoTempData .= '<tr><td scope="col">'.$row["tem_codigo"].'</td>'. '<td scope="col">'.$row["tem_nombre"].'</td>'. '<td scope="col">'.$row["tem_descripcion"].'</td>'. '<td scope="col">'.$row["tem_precio"].'</td><td scope ="col"><input type=text value='.$row["tem_cantidad"].' size="1"></td><td scope ="col">'.$row["pro_codigo"].'</td><td><button type="submit" class="btn btn-dark" name="eliminarPedido" value="eliminarPedido" >Eliminar Pedido</button><input type="hidden" value="'.$row["pro_codigo"].'" name="codigoProductoTemp"/></td></tr>';
+      echo $pedidoTempData .= '<tr><td scope="col">'.$row["tem_codigo"].'</td>'. '<td scope="col">'.$row["tem_nombre"].'</td>'. '<td scope="col">'.$row["tem_descripcion"].'</td>'. '<td scope="col">'.$row["tem_precio"].'</td><td scope ="col"><input type=text value='.$row["tem_cantidad"].' size="1"></td><td scope ="col">'.$row["pro_codigo"].'</td><td><button type="submit" class="btn btn-dark" name="eliminarPedido" value="eliminarPedido" >Eliminar Pedido</button><input type="hidden" value="'.$row["pro_codigo"].'" name="codigoProductoTemp"/></td></tr>';
       $subtotal = $subtotal+$row["tem_precio"];
     }
   } else {
