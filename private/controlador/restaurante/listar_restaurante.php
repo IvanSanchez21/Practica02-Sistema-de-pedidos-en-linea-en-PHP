@@ -11,9 +11,9 @@
 <header>
         <nav>
         <ul>
-        <li><a href="listar_cliente.php">Clientes</a></li>
+        <li><a href="../cliente/listar_cliente.php">Clientes</a></li>
         <li><a href="../producto/listar_productos.php">Productos</a></li>
-        <li><a href="../restaurante/listar_restaurante.php">Restaurantes</a></li>
+        <li><a href="listar_restaurante.php">Restaurantes</a></li>
       </ul>
         </nav>
     </header>
