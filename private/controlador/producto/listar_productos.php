@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Productos</title>
 <!-- <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" /> -->
-<link rel="stylesheet" type="text/css" href="../../css/hoja.css">
+<link rel="stylesheet" type="text/css" href="../../../css/hoja.css">
 
 </head>
 
@@ -13,11 +13,9 @@
 <header>
         <nav>
         <ul>
-        <li><a href="listar_cliente.php">Clientes</a></li>
+        <li><a href="../cliente/listar_cliente.php">Clientes</a></li>
         <li><a href="listar_productos.php">Productos</a></li>
         <li><a href="listar_restaurante.php">Restaurantes</a></li>
-        <li><a href="listar_usuarios.php">Usuarios</a></li>
-        <li><a href="ventas.php">Ventas</a></li>
       </ul>
         </nav>
     </header>
@@ -26,7 +24,7 @@
 
 
 <?php
-include '../../config/conexionBD.php';
+include '../../../config/conexionBD.php';
 $sql = "SELECT * FROM producto";
 $result = $conn->query($sql);
 ?>
@@ -60,7 +58,7 @@ $result = $conn->query($sql);
        correo=<?php echo $row["pro_precio"]?>">
       <input type='button' name='up' id='up' value='Actualizar'></a></td>
       
-      <td class="bot"><a href="../vista/crear_producto.html"><input type='button' name='del' id='del' value='Crear'></a></td>
+      <td class="bot"><a href="../producto/crear_producto.php"><input type='button' name='del' id='del' value='Crear'></a></td>
       </tr>
 
 <?php 

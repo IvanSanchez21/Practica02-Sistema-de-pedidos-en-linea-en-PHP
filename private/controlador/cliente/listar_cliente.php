@@ -12,9 +12,8 @@
         <nav>
         <ul>
         <li><a href="listar_cliente.php">Clientes</a></li>
-        <li><a href="listar_productos.php">Productos</a></li>
+        <li><a href="../producto/listar_productos.php">Productos</a></li>
         <li><a href="listar_restaurante.php">Restaurantes</a></li>
-        <li><a href="ventas.php">Ventas</a></li>
       </ul>
         </nav>
     </header>
@@ -50,12 +49,12 @@ $result = $conn->query($sql);
         echo " <td>" . $row["cli_nombre"] . "</td>";
         echo " <td>" . $row["cli_apellido"] . "</td>";
         echo " <td>" . $row["cli_direccion"] . "</td>";
-        echo " <td>" . $row["pro_telefono"] . "</td>";
-        echo " <td>" . $row["cab_correo"] . "</td>";
-        echo " <td>" . $row["cab_clave"] . "</td>";
+        echo " <td>" . $row["cli_telefono"] . "</td>";
+        echo " <td>" . $row["cli_correo"] . "</td>";
+        echo " <td>" . $row["cli_clave"] . "</td>";
     //   
     ?>
-      <td class="bot"><a href="eliminar.php?codigo=<?php echo $row["cli_codigo"]?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
+      <td class="bot"><a href="eliminar_cliente.php?codigo=<?php echo $row["cli_codigo"]?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
       
       <td class='bot'><a href="modificar_cliente.php?
       codigo=<?php echo $row["cli_codigo"]?> &
@@ -63,13 +62,13 @@ $result = $conn->query($sql);
       nombre=<?php echo $row["cli_nombre"]?> &
       apellido=<?php echo $row["cli_apellido"]?> &
       direccion=<?php echo $row["cli_direccion"]?> &
-      telefono=<?php echo $row["pro_telefono"]?> &
-      correo=<?php echo $row["cab_correo"]?> &
-      correo=<?php echo $row["cab_clave"]?>">
+      telefono=<?php echo $row["cli_telefono"]?> &
+      correo=<?php echo $row["cli_correo"]?> &
+      correo=<?php echo $row["cli_clave"]?>">
       <input type='button' name='up' id='up' value='Actualizar'></a></td>
       
       <td class="bot">
-        <a href="../vista/crear_cliente.html">
+        <a href="../../../public/vista/registrar_cliente.html">
         <input type='button' name='del' id='del' value='Crear'>
       </a></td>
       </tr>
