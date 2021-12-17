@@ -1,6 +1,7 @@
 <?php
       session_start();
       $id = $_SESSION['Inicio'];
+      //var_dump($_POST);
       //echo $id;
       $rol="";
       $nombre="";
@@ -9,7 +10,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "";
-      $dbname = "practica2";
+      $dbname = "restaurantes1"; 
 
       // Create connection
       $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,7 +19,7 @@
         die("Connection failed: " . $conn->connect_error);
       }
 
-      $sql = "SELECT rol FROM usuario WHERE id='$id'";
+      $sql = "SELECT * FROM usuario WHERE usu_codigo='$id'";
       //echo $sql;
 
       $result = mysqli_query($conn, $sql);
@@ -27,21 +28,21 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
           $usuarioEncontrado = TRUE;
-          //echo "id: " . $row["id"]. " " . $row["correo"]. " " . $row["contrasena"]. " " . $row["rol"] . "<br>";
-          $rol = $row["rol"];
+          //echo "id: " . $row["usu_codigo"]. " " . $row["usu_correo"]. " " . $row["usu_clave"]. " " . $row["usu_rol"] . "<br>";
+          $rol = $row["usu_rol"];
         }
       } else {
         //echo "0 results";
       }
 
       //Sacar nombre del cliente
-      $sqlconsulta = "SELECT nombre FROM cliente WHERE usuario_id='$id'";
+      $sqlconsulta = "SELECT cli_nombre FROM cliente WHERE cli_codigo='$id'";
       $result = mysqli_query($conn, $sqlconsulta);
 
       if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          $nombre=$row["nombre"];
+          $nombre=$row["cli_nombre"];
           //echo "Nombre: " . $row["nombre"]."<br>";
         }
       } else {
@@ -49,13 +50,13 @@
       }
 
       //Sacar nombre del restaurante
-      $sqlconsultaRE = "SELECT nombre FROM restaurante WHERE usuario_id='$id'";
+      $sqlconsultaRE = "SELECT res_nombre FROM restaurante WHERE usu_codigo='$id'";
       $result = mysqli_query($conn, $sqlconsultaRE);
 
       if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          $nombre=$row["nombre"];
+          $nombre=$row["res_nombre"];
           //echo "Nombre: " . $row["nombre"]."<br>";
         }
       } else {
@@ -63,7 +64,7 @@
       }
 
       mysqli_close($conn);
-      //echo $rol;
+      echo $rol;
     
 ?>
 
@@ -103,8 +104,8 @@
                 </div>
 
                 <div class="flex flex-wrap">
-                    <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-1000 dark:focus:ring-blue-500">Iniciar Sesión</button>
-                    <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-500">Regístrate</button>
+                        <a href="../controlador/sesion.php">Cerrar Sesión</a>
+              
                 </div>
             </section>
         </nav>
@@ -114,36 +115,54 @@
         <img src="../../img/Inicio.png" alt="">
     </section>
 
+        
+    <?php if($rol == 'R'):?>
     <section class="about-us">
         <div class="contenedor1">
             <center>
-                <h2 class="titulo">Recomendación de Restaurantes</h2>
+                <h2 class="titulo">Gestión de Restaurante</h2>
             </center>   
             <div class="contenedor-articulo">
-                <div class="articulo" data-aos="zoom-in-right">
+            <div class="articulo" data-aos="zoom-in-right">
+                    <i class="fas fa-cog"></i>
+                    <h3>Administrar Clientes</h3>
+                    <p>En esta sección usted podra Eliminar,actulizar,agregar y listar los clientes.!</p>
+                    <a href="../../private/controlador/cliente/listar_cliente.php">Ir a Clientes---></a>
+                </div>  
+            
+            <div class="articulo" data-aos="zoom-in-right">
                     <i class="fas fa-pen-fancy"></i>
-                    <h3>Restaurante 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maxime eius quo
-                        consequuntur magni. Quis voluptate repudiandae soluta quod mollitia!</p>
-                    <a href="#">Read more ---></a>
+                    <h3>Administrar Productos</h3>
+                    <p>En esa sección usted podra usted podra Eliminar,actulizar,agregar y listar los productos. </p>
+                    <a href="../../private/controlador/producto/listar_productos.php">Ir a Productos ---></a>
                 </div>
                 <div class="articulo" data-aos="zoom-in-right">
                     <i class="fas fa-code"></i>
-                    <h3>Restaurante 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maxime eius quo
-                        consequuntur magni. Quis voluptate repudiandae soluta quod mollitia!</p>
-                    <a href="#">Read more ---></a>
+                    <h3>Administrar Restaurantes</h3>
+                    <p>En esta sección usted podra Eliminar,actulizar,agregar y listar los restaurantes.</p>
+                    <a href="../../private/controlador/restaurante/listar_restaurante.php">Ir a Restaurantes---></a>
                 </div>
-                <div class="articulo" data-aos="zoom-in-right">
-                    <i class="fas fa-cog"></i>
-                    <h3>Restaurante 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maxime eius quo
-                        consequuntur magni. Quis voluptate repudiandae soluta quod mollitia!</p>
-                    <a href="#">Read more ---></a>
-                </div> 
+                
             </div>
         </div>
     </section>
+
+
+    <?php elseif($rol == 'C'):?>
+    <section class="about-us">
+        <div class="contenedor1">
+            <center>
+                <h2 class="titulo">Bienvenidos</h2>
+            </center>   
+            
+            
+        </div>
+    </section>
+    <?php endif ?>
+
+
+
+
 
     <footer>
         <div class="partFooter">

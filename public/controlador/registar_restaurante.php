@@ -1,15 +1,15 @@
 <?php           
-            
+            var_dump($_POST);
             include '../../config/conexionBD.php';
             
             $nombres = isset($_POST["nombre"]) ? mb_strtoupper(trim($_POST["nombre"]), 'UTF-8') : null;
             $direcciones = isset($_POST["direccion"]) ? mb_strtoupper(trim($_POST["direccion"]), 'UTF-8') : null;
             $telefono = isset($_POST["telefono"]) ? trim($_POST["telefono"]): null; 
             $correo = isset($_POST["correo"]) ? trim($_POST["correo"]): null;
-            $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null;
+            $contrasena = isset($_POST["clave"]) ? trim($_POST["clave"]) : null;
             $last_id= "";
             $rol= "";
-
+            echo $contrasena;
             $sql = "INSERT INTO usuario (usu_correo, usu_clave, usu_rol) VALUES ( '$correo', '$contrasena', 'R')";
 
 

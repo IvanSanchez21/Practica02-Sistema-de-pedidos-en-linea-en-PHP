@@ -28,14 +28,14 @@
         while($row = $result->fetch_assoc()) {
           $usuarioEncontrado = TRUE;
           //echo "id: " . $row["id"]. " " . $row["correo"]. " " . $row["contrasena"]. " " . $row["rol"] . "<br>";
-          $sqlconsulta = "SELECT nombre FROM cliente WHERE usuario_id=' $row[id] '";
-          $_SESSION['Inicio'] = $row["id"];
+          $sqlconsulta = "SELECT nombre FROM cliente WHERE usu_codigo=' $row[usu_codigo] '";
+          $_SESSION['Inicio'] = $row["usu_codigo"];
         }
       } else {
         //echo "0 results";
       }
       mysqli_close($conn);
-      //echo $_SESSION['Inicio'];
+      echo $_SESSION['Inicio'];
     }
 }
        
@@ -79,7 +79,7 @@
                 echo '<div class="alert alert-dark" role="alert">
                 Usuario:' . $correo . '<br>Inició sesión correctamente!
                 </div>';
-                header("Location: ../vista/index.html");
+                header("Location: ../vista/index.php");
             }
             if($_POST && !$usuarioEncontrado){
                 echo '<div class="alert alert-dark" role="alert">
