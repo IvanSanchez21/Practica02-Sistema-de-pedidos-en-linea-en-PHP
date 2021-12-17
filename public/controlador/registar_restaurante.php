@@ -1,4 +1,5 @@
 <?php           
+            
             include '../../config/conexionBD.php';
             
             $nombres = isset($_POST["nombre"]) ? mb_strtoupper(trim($_POST["nombre"]), 'UTF-8') : null;
@@ -7,8 +8,10 @@
             $correo = isset($_POST["correo"]) ? trim($_POST["correo"]): null;
             $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null;
             $last_id= "";
+            $rol= "";
 
-            $sql = "INSERT INTO usuario (usu_correo, usu_clave, usu_rol) VALUES ( '$correo', '$contrasena', 'C')";
+            $sql = "INSERT INTO usuario (usu_correo, usu_clave, usu_rol) VALUES ( '$correo', '$contrasena', 'R')";
+
 
             //echo $sql;
 

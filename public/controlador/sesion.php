@@ -40,6 +40,8 @@
 }
        
 ?>
+
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -98,7 +100,7 @@
     <br>
     <a href="Principal/Principal.php"><input type="submit" value="Iniciar Sesión" class="w-100 btn btn-secondary" id="inicioSesion" name="inicioSesion"></a>
     <p></p>
-    <a href="Registrarse/Registro.php"><input type="button" value="Registrarse" class="w-100 btn btn-secondary"></a>
+    
     <a href="../vista/registrar_cliente.html">Registrar Cliente</a>
     
     <a href="../vista/registar_restaurante.html">Registrar Restaurante</a>

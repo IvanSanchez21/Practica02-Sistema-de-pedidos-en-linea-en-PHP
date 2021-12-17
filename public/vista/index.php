@@ -1,3 +1,75 @@
+<?php
+      session_start();
+      $id = $_SESSION['Inicio'];
+      //echo $id;
+      $rol="";
+      $nombre="";
+      $nombreRe="";
+
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "practica2";
+
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      // Check connection
+      if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+
+      $sql = "SELECT rol FROM usuario WHERE id='$id'";
+      //echo $sql;
+
+      $result = mysqli_query($conn, $sql);
+
+      if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          $usuarioEncontrado = TRUE;
+          //echo "id: " . $row["id"]. " " . $row["correo"]. " " . $row["contrasena"]. " " . $row["rol"] . "<br>";
+          $rol = $row["rol"];
+        }
+      } else {
+        //echo "0 results";
+      }
+
+      //Sacar nombre del cliente
+      $sqlconsulta = "SELECT nombre FROM cliente WHERE usuario_id='$id'";
+      $result = mysqli_query($conn, $sqlconsulta);
+
+      if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          $nombre=$row["nombre"];
+          //echo "Nombre: " . $row["nombre"]."<br>";
+        }
+      } else {
+        //echo "0 results";
+      }
+
+      //Sacar nombre del restaurante
+      $sqlconsultaRE = "SELECT nombre FROM restaurante WHERE usuario_id='$id'";
+      $result = mysqli_query($conn, $sqlconsultaRE);
+
+      if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          $nombre=$row["nombre"];
+          //echo "Nombre: " . $row["nombre"]."<br>";
+        }
+      } else {
+        //echo "0 results";
+      }
+
+      mysqli_close($conn);
+      //echo $rol;
+    
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
