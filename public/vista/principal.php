@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="flex flex-wrap">
-                        <a href="../controlador/sesion.php">Cerrar Sesión</a>
+                        <a href="../controlador/index.php">Cerrar Sesión</a>
               
                 </div>
             </section>

@@ -79,7 +79,7 @@
                 echo '<div class="alert alert-dark" role="alert">
                 Usuario:' . $correo . '<br>Inició sesión correctamente!
                 </div>';
-                header("Location: ../vista/index.php");
+                header("Location: ../vista/principal.php");
             }
             if($_POST && !$usuarioEncontrado){
                 echo '<div class="alert alert-dark" role="alert">
