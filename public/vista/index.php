@@ -152,7 +152,7 @@
     <section class="about-us">
         <div class="contenedor1">
             <center>
-                <h2 class="titulo">Bienvenidos</h2>
+               <a href="../../private/controlador/carrito.php"><h2 class="titulo">Realice su Pedido</h2></a> 
             </center>   
             
             
