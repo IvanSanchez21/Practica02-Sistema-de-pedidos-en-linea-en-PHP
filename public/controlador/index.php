@@ -51,8 +51,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <title>Inicio de sesión</title>
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+    <link rel="stylesheet" href="../../css/estilosf.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
     <br>
     <br>
   </head>
@@ -71,9 +71,8 @@
 
 <body >
 <main >
-  <form method="post" action="">
-    <img class="mb-4" src="Images/InicioSesion.png" alt="" width="300" height="200">
-    <h1 >Por favor inicia sesión</h1>
+  <form method="post" action="" class="formulario">
+    <h1 >Inicia sesión</h1>
     <?php 
             if ($usuarioEncontrado){
                 echo '<div class="alert alert-dark" role="alert">
@@ -83,29 +82,36 @@
             }
             if($_POST && !$usuarioEncontrado){
                 echo '<div class="alert alert-dark" role="alert">
-                No inició sesión correctamente! Intente ingresar nuevamente con los datos correctos!<br>Si no tiene una cuenta puede crear una nueva.
+                Ingrese nuevamente sus datos<br>Si no tiene una cuenta puede registrarse.
                 </div>';
             }
     ?>
 
 
-    <div class="form-floating" width="200" >
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" size="50" name="correo"> 
-      <label for="floatingInput">Correo electrónico</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contrasena"> 
-      <label for="floatingPassword">Contraseña</label>
-    </div>
-    <br>
-    <a href="Principal/Principal.php"><input type="submit" value="Iniciar Sesión" class="w-100 btn btn-secondary" id="inicioSesion" name="inicioSesion"></a>
+<div class="input-contenedor">
+    <i class="fas fa-envelope icon"></i>
+      <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" size="50" name="correo"> 
+     </div>
+
+    <div class="input-contenedor">
+    <i class="fas fa-key icon"></i>
+      <input type="password" class="input-contenedor" id="floatingPassword" placeholder="Password" name="contrasena"> 
+      </div>
+
+    
+    <a href="Principal/Principal.php"><input type="submit" value="Iniciar Sesión"  id="inicioSesion" class="button" name="inicioSesion"></a>
     <p></p>
     
-    <a href="../vista/registrar_cliente.html">Registrar Cliente</a>
     
-    <a href="../vista/registar_restaurante.html">Registrar Restaurante</a>
+
+    <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿No tienes una cuenta? </p>
+         <a href="../vista/registrar_cliente.html" class="link">Registrar Cliente</a>
+         <br>
+    <a href="../vista/registar_restaurante.html" class="link">Registrar Restaurante</a>
   </form>
 </main>
+
 
 </body>
     

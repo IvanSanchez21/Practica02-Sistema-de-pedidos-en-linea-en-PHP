@@ -90,12 +90,9 @@
     <header>
         <nav>
             <section class="contenedor nav">
-                <div class="logo">
-                    <img src="" alt="">
-                </div>
+                
                 <div class="enlaces-header">
                     <a href="#">Inicio</a>
-                    <a href="#">Restaurantes</a>
                     <a href="#">Contactos</a>
                     <a href="#">Visión</a>
                 </div>
@@ -171,9 +168,9 @@
         
         <div class="partFooter">
             <h4>Servicios</h4>
-            <a href="#">Services 1</a>
-            <a href="#">Services 2</a>
-            <a href="#">Services 3</a>
+            <a href="#">Pedidos a domicilio</a>
+            <a href="#">Abierto las 24h</a>
+            <a href="#">Domingo con horario restringido</a>
         </div>
         
         <div class="partFooter">

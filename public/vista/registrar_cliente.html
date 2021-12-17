@@ -3,35 +3,59 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/estilosf.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
 </head>
 
 <body>
-    <form id="formulario01" method="POST" action="../controlador/registrar_usuario.php">
-        <h1>CLIENTE</h1>
-        <label for="cedula">Cedula (*)</label>
+    <section>
+    
+    <form id="formulario01" method="POST" class="formulario" action="../controlador/registrar_usuario.php">
+        <h1>Registro de Cliente</h1>
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
         <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el número de cedula" required />
-        <br />
-        <label for="nombres">Nombres (*)</label>
+        </div>
+        
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
         <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres" required />
-        <br />
-        <label for="apellidos">Apelidos (*)</label>
+    </div>
+       
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
         <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos" required />
-        <br />
-        <label for="direccion">Dirección (*)</label>
+    </div>
+        
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
         <input type="text" id="direccion" name="direccion" value="" placeholder="Ingrese su dirección" required />
-        <br />
-        <label for="telefono">Teléfono (*)</label>
+    </div>
+        
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
         <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico" required />
-        <br />
-        <label for="correo">Correo electrónico (*)</label>
-        <input type="email" id="correo" name="correo" value="" placeholder="Ingrese su correo electrónico" required />
-        <br />
-        <label for="correo">Contraseña (*)</label>
+    </div>
+        
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
+        <input type="text" id="correo" name="correo" value="" placeholder="Ingrese su correo electrónico" required />
+    </div>
+       
+        <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
         <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña" required />
-        <br />
-        <input type="submit" id="crear" name="crear" value="Aceptar" />
-        <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
+    </div>
+
+    
+        <input  type="submit"  id="crear" class="button name="crear" value="Aceptar"  />
+        <br> 
+        <br>   
+        <input type="reset" id="cancelar" class="button name="cancelar" value="Cancelar" />
+
+    </div>
     </form>
+</section>
 </body>
 
 </html>

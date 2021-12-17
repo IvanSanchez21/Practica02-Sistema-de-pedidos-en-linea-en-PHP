@@ -13,7 +13,7 @@ h1
 
 ul{
     list-style-type: none;
-    background-color: #457b9d;
+    background-color: #3F4046;
     overflow: hidden;
     margin: 0;
     padding: 0,60px,50px,0;
@@ -29,7 +29,7 @@ li a{
     text-decoration: none;
 }
 li a:hover{
-    background-color: #1d3557;
+    background-color: cadetblue;
 }
 
 

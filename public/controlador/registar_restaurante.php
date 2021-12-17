@@ -35,5 +35,5 @@
 
 
             $conn->close();
-            header("Location:../controlador/sesion.php");
+            header("Location:../controlador/index.php");
 ?>

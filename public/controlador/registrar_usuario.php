@@ -34,5 +34,5 @@ VALUES ('$cedula', '$nombres', '$apellidos', '$direccion', '$telefono', '$correo
 
 
             $conn->close();
-            header("Location:../controlador/sesion.php");
+            header("Location:../controlador/index.php");
 ?>
