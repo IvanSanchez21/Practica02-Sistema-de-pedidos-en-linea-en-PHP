@@ -9,7 +9,7 @@
     <form id="formulario01" method="POST" action="../controlador/producto/crear_producto.php">
         <h1>Producto</h1>
         
-           <div id="alumnos">
+           <!-- <div id="alumnos">
                <label for=""><select name="" id="">
                    <?php
                        include '../../../config/conexionBD.php';
@@ -22,7 +22,7 @@
                    
                    <?php endforeach  ?>
                </select></label>
-           </div> 
+           </div>  -->
 
         
         <label for="cedula">Nombre (*)</label>
